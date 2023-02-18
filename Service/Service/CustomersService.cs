@@ -70,5 +70,13 @@ namespace Service.Service
             return 新增客戶資料;
         }
 
+        public int UpdateData(CustomersEntity customers)
+        {
+            CustomersRepository 毛蟲 = new CustomersRepository();
+
+            int 更新客戶住址 = 毛蟲.Update(customers);
+
+            return 更新客戶住址;
         }
+    }
 }
