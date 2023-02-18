@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThatTodo", "ThatTodo\ThatTodo.csproj", "{1BA35759-4CC9-4307-87BA-9043458006A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{9C8943B5-610B-4567-8E2E-41CF74964293}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{451887D4-44D4-47BA-833C-1668ECD10E48}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1BA35759-4CC9-4307-87BA-9043458006A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BA35759-4CC9-4307-87BA-9043458006A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BA35759-4CC9-4307-87BA-9043458006A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BA35759-4CC9-4307-87BA-9043458006A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C8943B5-610B-4567-8E2E-41CF74964293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C8943B5-610B-4567-8E2E-41CF74964293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C8943B5-610B-4567-8E2E-41CF74964293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C8943B5-610B-4567-8E2E-41CF74964293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{451887D4-44D4-47BA-833C-1668ECD10E48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{451887D4-44D4-47BA-833C-1668ECD10E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{451887D4-44D4-47BA-833C-1668ECD10E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{451887D4-44D4-47BA-833C-1668ECD10E48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE17723C-6887-437F-86DA-E1021D37075A}
+	EndGlobalSection
+EndGlobal
