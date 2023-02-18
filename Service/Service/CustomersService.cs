@@ -78,5 +78,13 @@ namespace Service.Service
 
             return 更新客戶住址;
         }
+        public int DeleteData(CustomersEntity customers)
+        {
+            CustomersRepository 毛蟲 = new CustomersRepository();
+
+            int 刪除客戶城市 = 毛蟲.Delete(customers);
+
+            return 刪除客戶城市;
+        }
     }
 }

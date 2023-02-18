@@ -39,5 +39,14 @@ namespace ThatTodo.Controllers
             return CreateData;
         }
 
+        [HttpPost]
+        public int UpdateAddress(CustomersEntity customers)
+        {
+            CustomersService 毛毛蟲 = new CustomersService();
+
+            int UpdateData = 毛毛蟲.UpdateData(customers);
+
+            return UpdateData;
+        }
     }
 }
