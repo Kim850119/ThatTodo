@@ -48,5 +48,15 @@ namespace ThatTodo.Controllers
 
             return UpdateData;
         }
+
+        [HttpPost]
+        public int DeleteCity(CustomersEntity customers)
+        {
+            CustomersService 毛毛蟲 = new CustomersService();
+
+            int DeleteData = 毛毛蟲.DeleteData(customers);
+
+            return DeleteData;
+        }
     }
 }
