@@ -17,5 +17,35 @@ namespace ThatTodo.Controllers
 
             return employeeData;
         }
+
+        [HttpPost]
+        public int CreateEmployee(EmployeeEntity employee)
+        {
+            EmployeeService 毛毛蟲 = new EmployeeService();
+
+            int CreateData = 毛毛蟲.CreateData(employee);
+
+            return CreateData;
+        }
+
+        [HttpPost]
+        public int UpdateAddress(EmployeeEntity employee)
+        {
+            EmployeeService 毛毛蟲 = new EmployeeService();
+
+            int UpdateData = 毛毛蟲.UpdateData(employee);
+
+            return UpdateData;
+        }
+
+        [HttpPost]
+        public int DeleteCity(EmployeeEntity employee)
+        {
+            EmployeeService 毛毛蟲 = new EmployeeService();
+
+            int DeleteData = 毛毛蟲.DeleteData(employee);
+
+            return DeleteData;
+        }
     }
 }

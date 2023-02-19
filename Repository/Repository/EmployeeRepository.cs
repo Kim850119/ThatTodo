@@ -27,5 +27,50 @@ namespace Repository.Repository
                 return 全部員工資料;
             }
         }
+        public int Create(EmployeeEntity parameter)
+        {
+            var sql =
+    @"
+                Insert into Customers 
+                (
+                   [CustomerID],[FirstName],[LastName],[Address],[HomePhone],[CellPhone]
+                ) 
+                values 
+                (
+                   @CustomerID,@FirstName,@LastName,@Address,@HomePhone,@CellPhone
+                );
+            ";
+            using (var conn = new SqlConnection(連線字串))
+            {
+                conn.Open();
+
+                int Employee = conn.Execute(sql, parameter);
+                return Employee;
+            }
+        }
+        public int Update(EmployeeEntity Address)
+        {
+            using (var conn = new SqlConnection(連線字串))
+            {
+                conn.Open();
+
+                var sql = @"Update Employee Set Address = @Address WHERE CellPhone = @CellPhone";
+
+                int z = conn.Execute(sql, Address);
+                return z;
+            }
+        }
+        public int Delete(EmployeeEntity FirstName)
+        {
+            using (var conn = new SqlConnection(連線字串))
+            {
+                conn.Open();
+                var sql = @"Delete From Employee WHERE FirstName = @FirstName";
+
+                int a = conn.Execute(sql, City);
+                return a;
+            }
+
+        }
     }
 }
