@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Model.ViewModel
 {
-    public class Both
+    public class BothEntity
     {
         public string? CustomerID { get; set; }
         public string? CompenyName { get; set; }
