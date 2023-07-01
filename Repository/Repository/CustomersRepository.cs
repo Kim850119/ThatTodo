@@ -57,7 +57,7 @@ namespace Repository.Repository
             {
                 conn.Open();
 
-                var sql = @"Update Customers Set Address = @Address WHERE Phone = @Phone";
+                var sql = @"Update Customers Set Address = @Address WHERE CustomerID = @CustomerID";
 
                 int z = conn.Execute(sql, Address);
                 return z;
@@ -68,7 +68,7 @@ namespace Repository.Repository
             using (var conn = new SqlConnection(連線字串))
             {
                 conn.Open();
-                var sql = @"Delete From Customers WHERE City = @City";
+                var sql = @"Delete From Customers WHERE Address = @Address";
 
                 int a = conn.Execute(sql, City);
                 return a;

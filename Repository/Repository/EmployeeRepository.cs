@@ -31,7 +31,7 @@ namespace Repository.Repository
         {
             var sql =
     @"
-                Insert into Customers 
+                Insert into Employee 
                 (
                    [CustomerID],[FirstName],[LastName],[Address],[HomePhone],[CellPhone]
                 ) 
@@ -43,8 +43,14 @@ namespace Repository.Repository
             using (var conn = new SqlConnection(連線字串))
             {
                 conn.Open();
-
-                int Employee = conn.Execute(sql, parameter);
+                int Employee = 0;
+                try
+                {
+                    Employee = conn.Execute(sql, parameter);
+                }
+                catch (Exception ex)
+                {
+                }
                 return Employee;
             }
         }
@@ -54,7 +60,7 @@ namespace Repository.Repository
             {
                 conn.Open();
 
-                var sql = @"Update Employee Set Address = @Address WHERE CellPhone = @CellPhone";
+                var sql = @"Update Employee Set Address = @Address WHERE CustomerId = @CustomerID";
 
                 int z = conn.Execute(sql, Address);
                 return z;
@@ -65,9 +71,9 @@ namespace Repository.Repository
             using (var conn = new SqlConnection(連線字串))
             {
                 conn.Open();
-                var sql = @"Delete From Employee WHERE FirstName = @FirstName";
+                var sql = @"Delete From Employee WHERE Address = @Address";
 
-                int a = conn.Execute(sql, City);
+                int a = conn.Execute(sql, FirstName);
                 return a;
             }
 

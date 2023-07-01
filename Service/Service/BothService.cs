@@ -4,6 +4,7 @@ using Repository.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,28 +44,137 @@ namespace Service.Service
             }
             return boths;
         }
-        public List<BothEntity> 新增指定ID(List<BothEntity> 新增資料)
+        public string 新增指定ID(List<BothEntity> 新增資料)
         {
 
             CustomersEntity customersdata = new CustomersEntity();
 
-            List<CustomersEntity> customers = new List<CustomersEntity>();
+            List<CustomersEntity> customerlist = new List<CustomersEntity>();
 
             EmployeeEntity employeedata = new EmployeeEntity();
 
-            List<EmployeeEntity> employees = new List<EmployeeEntity>();
+            List<EmployeeEntity> employeelist = new List<EmployeeEntity>();
 
             
             foreach (BothEntity 單一資料 in 新增資料)
             {
                 
                 customersdata.CustomerID = 單一資料.CustomerID;
+                customersdata.CompenyName= 單一資料.CompenyName;
+                customersdata.Address = 單一資料.Address;
+                customersdata.City = 單一資料.City;
+                customersdata.Phone = 單一資料.Phone;
+                customerlist.Add(customersdata);
 
-
-                //CreateData.Add(customers);
+                employeedata.CustomerID = 單一資料.CustomerID;
+                employeedata.FirstName= 單一資料.FirstName;
+                employeedata.LastName = 單一資料.LastName;
+                employeedata.Address = 單一資料.Address;
+                employeedata.HomePhone = 單一資料.HomePhone;
+                employeedata.CellPhone = 單一資料.CellPhone;
+                employeelist.Add(employeedata);
 
             }
+
+            CustomersRepository customersRepository = new CustomersRepository();
+
+            foreach(CustomersEntity customersiteam in customerlist)
+            {
+                int 新增客戶 = customersRepository.Create(customersiteam);
+            }
             
+            EmployeeRepository employeeRepository = new EmployeeRepository();
+
+            foreach (EmployeeEntity employeeiteam in employeelist)
+            {
+                int 新增員工 = employeeRepository.Create(employeeiteam);
+            }
+            return "新增成功";
+        }
+        public string 更新指定ID(List<BothEntity> 更新資料)
+        {
+
+            CustomersEntity customersdata = new CustomersEntity();
+
+            List<CustomersEntity> customerlist = new List<CustomersEntity>();
+
+            EmployeeEntity employeedata = new EmployeeEntity();
+
+            List<EmployeeEntity> employeelist = new List<EmployeeEntity>();
+
+
+            foreach (BothEntity 單一資料 in 更新資料)
+            {
+
+                customersdata.CustomerID = 單一資料.CustomerID;
+                customersdata.CompenyName = 單一資料.CompenyName;
+                customersdata.Address = 單一資料.Address;
+                customersdata.City = 單一資料.City;
+                customersdata.Phone = 單一資料.Phone;
+                customerlist.Add(customersdata);
+
+                employeedata.CustomerID = 單一資料.CustomerID;
+                employeedata.FirstName = 單一資料.FirstName;
+                employeedata.LastName = 單一資料.LastName;
+                employeedata.Address = 單一資料.Address;
+                employeedata.HomePhone = 單一資料.HomePhone;
+                employeedata.CellPhone = 單一資料.CellPhone;
+                employeelist.Add(employeedata);
+
+            }
+
+            CustomersRepository customersRepository = new CustomersRepository();
+
+            foreach (CustomersEntity customersiteam in customerlist)
+            {
+                int 新增客戶 = customersRepository.Update(customersiteam);
+            }
+
+            EmployeeRepository employeeRepository = new EmployeeRepository();
+
+            foreach (EmployeeEntity employeeiteam in employeelist)
+            {
+                int 新增員工 = employeeRepository.Update(employeeiteam);
+            }
+            return "更新成功";
+
+        }
+        public string 刪除指定ID(List<BothEntity> 刪除資料)
+        {
+
+            CustomersEntity customersdata = new CustomersEntity();
+
+            List<CustomersEntity> customerlist = new List<CustomersEntity>();
+
+            EmployeeEntity employeedata = new EmployeeEntity();
+
+            List<EmployeeEntity> employeelist = new List<EmployeeEntity>();
+
+
+            foreach (BothEntity 單一資料 in 刪除資料)
+            {
+
+                customersdata.Address = 單一資料.Address;
+                customerlist.Add(customersdata);
+
+                employeedata.Address = 單一資料.Address;
+                employeelist.Add(employeedata);
+
+            }
+
+            CustomersRepository customersRepository = new CustomersRepository();
+
+            foreach (CustomersEntity customersiteam in customerlist)
+            {
+                int 新增客戶 = customersRepository.Delete(customersiteam);
+            }
+            EmployeeRepository employeeRepository = new EmployeeRepository();
+
+            foreach (EmployeeEntity employeeiteam in employeelist)
+            {
+                int 新增員工 = employeeRepository.Delete(employeeiteam);
+            }
+            return "刪除成功";
 
         }
     }
